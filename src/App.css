@@ -1,5 +1,9 @@
 .App {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  color: #1c1c1c;
+  font-family: "Lucida Console";
 }
 
 .App-logo {
@@ -35,4 +39,150 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+#header {
+  width: 100%;
+}
+
+#fixed-background {
+  /* Create the parallax scrolling effect */
+  height: 700px;
+  width: 100%;
+  background-image: url("./assets/green_ocean.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.header-background {
+  /*   position: absolute;
+  left: 0px;
+  top: 0px; */
+  height: 300px;
+
+  width: 100%;
+  object-fit: cover;
+  min-height: 80vh;
+  z-index: -2;
+}
+
+#nav-bar {
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  z-index: 2;
+  width: 100%;
+  background-color: #fafaff;
+  padding: 0;
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav-list {
+  width: 800px;
+}
+.nav-item {
+  display: inline-block;
+  list-style: none;
+  font-size: 30px;
+  padding: 20px;
+}
+
+.nav-link {
+  color: #1c1c1c;
+  text-decoration: none;
+}
+
+#header-logo {
+  height: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+
+}
+
+.container {
+  background-color: #eef0f2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.section {
+  padding: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 90%;
+
+  /*  border: 2px solid red; */
+}
+
+.card-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.card {
+
+  max-width: 400px;
+  margin: 20px;
+  display: grid;
+  grid-template-areas:
+    "card-picture card-picture"
+    "card-title card-title";
+  grid-template-columns: auto;
+  grid-template-rows: 250 auto;
+  background-color: #fafaff;
+  text-align: left;
+}
+
+.card-img {
+  grid-area: card-picture;
+  height: 250px;
+  object-fit: cover;
+  width: 400px;
+}
+
+.card-txt {
+  grid-area: card-text;
+  padding: 20px;
+  color: #1c1c1c;
+}
+.card-title {
+  grid-area: card-title;
+  padding: 10px;
+  color: #1c1c1c;
+}
+
+footer {
+  width: 100%;
+  background-color: #daddd8;
+  height: 200px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.footer-column {
+ text-align: left;
+}
+
+.text-section {
+  width: 90%;
+  background-color: #fafaff;
+  padding-right: 50px;
+  padding-left: 50px;
+}
+.text-section > p {
+  font-size: 16px;
+  line-height: 1.7;
+  font-weight: 400;
+}
+
+.text-section > h2 {
+  line-height: 1.7;
 }
