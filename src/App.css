@@ -4,16 +4,32 @@
   flex-direction: column;
   color: #1c1c1c;
   font-family: "Lucida Console";
+  width: 100vw;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.header-background-home {
+  height: 700px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+/* Smaller header for none hoem page */
+.header-background {
+  height: auto;
+}
+.header-background > .text-logo {
+  padding-top: 30px;
+}
+
+/* On screens that are 650px or less */
+@media screen and (max-width: 650px) {
+  .header-background-home {
+    height: 100vh;
+  }
+
+  .nav-item {
+    font-size: 25px !important;
+    padding: 10px;
+    align-self: flex-end;
   }
 }
 
@@ -32,75 +48,245 @@
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
 #header {
   width: 100%;
 }
 
 #fixed-background {
   /* Create the parallax scrolling effect */
-  height: 700px;
   width: 100%;
-  background-image: url("./assets/green_ocean.jpg");
+  /* background-image: url("./assets/green_ocean.jpg"); */
+  background-image: url("./assets/denna.jpg");
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
-.header-background {
-  /*   position: absolute;
-  left: 0px;
-  top: 0px; */
-  height: 300px;
-
+.overlay {
+  margin: 0;
+  padding: 0;
   width: 100%;
-  object-fit: cover;
-  min-height: 80vh;
-  z-index: -2;
+  background: rgb(34, 193, 195, 0.5);
+  background: linear-gradient(
+    0deg,
+    rgba(34, 193, 195, 0.5) 50%,
+    rgba(253, 187, 45, 0.5) 100%
+  );
+  /* opacity: 0.5; */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.center-item-inside {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
 }
 
-#nav-bar {
+.text-logo {
+  color: white;
+  font-family: "Lucida Console";
+  padding-top: 20px;
+}
+@media screen and (max-width: 650px) {
+  .text-logo {
+    font-size: 4em;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
+@media screen and (min-width: 650px) {
+  .text-logo {
+    font-size: 5em;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+.nav-bar {
+  width: 100vw;
+  box-sizing: border-box;
   position: fixed;
   left: 0px;
   top: 0px;
   z-index: 2;
-  width: 100%;
-  background-color: #fafaff;
   padding: 0;
-  height: 100px;
+  margin: 0;
+  height: 80px;
+
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  align-content: flex-end;
+  transition: background-color 0.2s ease-in;
 }
 
 .nav-list {
-  width: 800px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-evenly;
+  width: 700px;
+  padding: 0;
+  margin: 0;
 }
+
+#small-header-nav {
+  display: flex;
+  width: 90%;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  height: 100%;
+  list-style: none;
+}
+
+#mobile-nav-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  display: none;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  z-index: 40;
+}
+
+.nav-list-small {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 10px;
+  margin: 0;
+  position: fixed;
+  background-color: #eef0f2;
+  height: 100%;
+  width: 100%;
+}
+
+.nav-list-small > li {
+  font-size: 2.3em;
+  padding: 20px 0px;
+  list-style: none;
+  width: 90%;
+  border-bottom: 1px solid #1c1c1c;
+}
+
+.nav-list-small > li > .nav-link {
+  color: #1c1c1c;
+}
+
+.nav-list > li {
+  list-style: none;
+  align-self: flex-end;
+}
+
+.nav-list-small:before {
+  width: 100vw;
+  height: 100vh;
+}
+
 .nav-item {
   display: inline-block;
-  list-style: none;
   font-size: 30px;
   padding: 20px;
 }
 
+.nav-link:hover {
+  text-decoration: underline;
+}
+
 .nav-link {
-  color: #1c1c1c;
+  color: white;
   text-decoration: none;
+  cursor: pointer;
+}
+
+/* HAMBURGER MENU FOR MOBILE*/
+
+#hamburger-menu-button {
+  background-color: transparent;
+  border: 0;
+  width: 30px;
+  height: 30px;
+}
+
+.hamburger-icon-open div:first-child {
+  top: -3px;
+  transform: rotateZ(45deg);
+  background-color: rgba(253, 187, 45, 1);
+  transition: background-color 0.2s ease-in;
+}
+
+.hamburger-icon-open div:last-child {
+  top: 3px;
+  transform: rotateZ(45deg);
+  background-color: rgba(253, 187, 45, 1);
+  transition: background-color 0.2s ease-in;
+}
+
+.hamburger-icon-open div:nth-child(2) {
+  width: 42.5px !important;
+  top: 0;
+  right: 6.5px !important;
+  transform: rotateZ(-45deg);
+  background-color: rgba(253, 187, 45, 1);
+  transition: background-color 0.2s ease-in;
+}
+
+.hamburger-icon {
+  display: block;
+  width: 30px;
+  height: 30px;
+  margin: -15px auto 0 auto;
+  cursor: pointer;
+}
+
+.hamburger-icon div {
+  position: relative;
+  top: 0;
+  height: 6px;
+  background-color: #fff;
+  margin-bottom: 6px;
+  transition: 0.3s ease transform, 0.3s ease top, 0.3s ease width,
+    0.3s ease right;
+  border-radius: 2px;
+}
+
+.hamburger-icon div:first-child {
+  transform-origin: 0;
+}
+
+.hamburger-icon div:last-child {
+  margin-bottom: 0;
+  transform-origin: 30px;
+}
+
+.hamburger-icon div:nth-child(2) {
+  right: 0;
+  width: 30px;
+}
+
+@media screen and (max-width: 650px) {
+  #nav-list-large-screen {
+    display: none;
+  }
+
+  #mobile-nav-container {
+    display: flex;
+  }
+
+  .nav-bar {
+    height: auto;
+  }
 }
 
 #header-logo {
-  height: 100%;
-  padding: 10px;
-  box-sizing: border-box;
-
+  height: 75px;
 }
 
 .container {
@@ -111,12 +297,14 @@
 }
 
 .section {
+  box-sizing: border-box;
+  width: 100vw;
   padding: 20px;
   margin-top: 20px;
   margin-bottom: 20px;
-  width: 90%;
-
-  /*  border: 2px solid red; */
+  margin-right: 5vw;
+  margin-left: 5vw;
+  max-width: 1800px;
 }
 
 .card-container {
@@ -127,8 +315,6 @@
 }
 
 .card {
-
-  max-width: 400px;
   margin: 20px;
   display: grid;
   grid-template-areas:
@@ -140,11 +326,21 @@
   text-align: left;
 }
 
+.card:hover {
+  box-shadow: 5px 5px  #daddd8;
+  background-color: #fcfcff;
+}
+
 .card-img {
   grid-area: card-picture;
   height: 250px;
   object-fit: cover;
-  width: 400px;
+  width: 250px;
+}
+.page-img {
+  width: 100%;
+  height: 400px;
+  object-fit: contain;
 }
 
 .card-txt {
@@ -162,27 +358,170 @@ footer {
   width: 100%;
   background-color: #daddd8;
   height: 200px;
+  height: auto;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
 }
 
+/* On screens that are 650px or less */
+@media screen and (max-width: 650px) {
+  footer {
+    flex-direction: column;
+    height: auto;
+  }
+}
+
 .footer-column {
- text-align: left;
+  text-align: left;
+  padding: 10px;
 }
 
 .text-section {
-  width: 90%;
   background-color: #fafaff;
   padding-right: 50px;
   padding-left: 50px;
 }
 .text-section > p {
+  font-size: 1.2em;
+  line-height: 1.7;
+  font-weight: 400;
+  text-align: left;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.text-box-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  height: 100%;
+}
+.text-box-container-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 100%;
+}
+
+.text-box {
+  padding-right: 10px;
+  padding-left: 10px;
+  font-size: 1.2em;
+}
+
+.text-box-third {
+  width: 33.33%;
+}
+.third-height {
+  height: 33.33%;
+}
+
+.text-box-half {
+  width: 50%;
+}
+.half-height {
+  height: 50%;
+}
+
+.text-box > p {
   font-size: 16px;
   line-height: 1.7;
   font-weight: 400;
+  text-align: left;
+}
+
+.text-box > h4 {
+  text-align: left;
+}
+
+/* On screens that are 650px or less */
+@media screen and (max-width: 650px) {
+  .text-section {
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+
+  .text-box-container {
+    flex-direction: column;
+  }
+  .text-box-third {
+    width: 90%;
+  }
+
+  .text-box-half {
+    width: 90%;
+  }
 }
 
 .text-section > h2 {
   line-height: 1.7;
+}
+
+#scroll-button {
+  position: absolute;
+  bottom: 20vh;
+  left: 0;
+  width: 100%;
+  height: 0px;
+  font-size: 3rem;
+  z-index: 20;
+  cursor: pointer;
+  color: #1c1c1c;
+  background-color: transparent;
+  border: 0;
+}
+
+#scroll-button:before {
+  position: absolute;
+  top: 0;
+  z-index: -1;
+  content: "";
+  width: 44px;
+  height: 44px;
+  box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.1);
+  border-radius: 100%;
+  opacity: 0;
+  animation: sdb03 2s infinite;
+  box-sizing: border-box;
+}
+
+@keyframes sdb03 {
+  0% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  60% {
+    box-shadow: 0 0 0 60px rgba(255, 255, 255, 0.1);
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@media screen and (min-width: 650px) {
+  #scroll-button {
+    display: none;
+  }
+}
+
+.nav-bar-solid {
+  background-color: #daddd8;
+}
+
+.nav-bar-solid .nav-link {
+  color: #1c1c1c;
+  transition: color 0.1s ease-in;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.subheader-h1 {
+  padding-right: 10px;
+  padding-left: 10px;
+  text-align: center;
 }
