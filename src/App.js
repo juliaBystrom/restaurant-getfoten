@@ -6,6 +6,9 @@ import { Footer } from "./components/Footer";
 import { Home } from "./pages/Home";
 import { Meny } from "./pages/Meny";
 import { HittaHit } from "./pages/HittaHit";
+import {Bastu} from "./pages/Bastu"
+import {Gasthamn} from "./pages/Gasthamn"
+
 function App() {
 
   return (
@@ -16,6 +19,9 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="meny" element={<Meny />} />
         <Route path="hitta-hit" element={<HittaHit />} />
+        <Route path="bastu" element={<Bastu />} />
+        <Route path="gasthamn" element={<Gasthamn />} />
+        
       </Routes>
 
       <Footer />

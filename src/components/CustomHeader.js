@@ -3,12 +3,14 @@ import ScrollButton from "./ScrollButton";
 import { Link } from "react-router-dom";
 import logo2 from "../assets/logoWithTitle.svg";
 import { useLocation } from "react-router-dom";
-
+import SmallNav from "./SmallNav";
 export function CustomHeader() {
   const URL_PATHS = {
     home: "/",
     meny: "/meny",
     hittaHit: "/hitta-hit",
+    bastu: "/bastu",
+    gasthamn: "/gasthamn",
   };
 
   const location = useLocation();
@@ -16,10 +18,15 @@ export function CustomHeader() {
   return (
     <header id="header">
       <HeaderWrapper>
-        <ul className="nav-list">
+        <ul id="nav-list-large-screen" className="nav-list">
           <li className="nav-item">
             <Link className="nav-link" to="meny">
               Meny
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link className="nav-link" to="hitta-hit">
+              Hitta hit
             </Link>
           </li>
           <li id="nav-logo-item">
@@ -28,23 +35,29 @@ export function CustomHeader() {
             </Link>
           </li>
           <li className="nav-item">
-            <Link className="nav-link" to="hitta-hit">
-              Hitta hit
+            <Link className="nav-link" to="bastu">
+              Bastu
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link className="nav-link" to="gasthamn">
+              Gästhamnen
             </Link>
           </li>
         </ul>
+        <SmallNav />
       </HeaderWrapper>
       {location?.pathname === URL_PATHS.home ? (
         <div id="fixed-background" className="header-background-home">
           <div className="header-background-home overlay center-item-inside">
-            <h1 className="text-logo">Getfotens Sjökrog</h1>
+            <h1 className="text-logo">Getfoten Sjökrog</h1>
           </div>
           <ScrollButton />
         </div>
       ) : (
         <div id="fixed-background" className="header-background">
           <div className="header-background overlay center-item-inside">
-            <h1 className="text-logo">Getfotens Sjökrog</h1>
+            <h1 className="text-logo">Getfoten Sjökrog</h1>
           </div>
         </div>
       )}
@@ -54,9 +67,13 @@ export function CustomHeader() {
 
 export const HeaderWrapper = ({ children }) => {
   const [transparent, setTransparent] = React.useState(true);
-  window.addEventListener("scroll", () => {
-    scrolling = true;
-  },  { passive: true });
+  window.addEventListener(
+    "scroll",
+    () => {
+      scrolling = true;
+    },
+    { passive: true }
+  );
 
   let scrolling = false;
   /*

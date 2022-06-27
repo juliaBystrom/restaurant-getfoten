@@ -1,4 +1,3 @@
-
 export const GetfotenMap = () => {
   const srcString = `https://www.google.com/maps/embed/v1/place?q=place_id:ChIJd8VScKaBX0YRJHwLCrPpK30&key=${process.env.REACT_APP_MAPS_API_KEY}&zoom=12`;
 
