@@ -2,7 +2,6 @@ import React from "react";
 
 import { Link } from "react-router-dom";
 import logo2 from "../assets/logoWithTitle.svg";
-import { InformationHeader } from "./InformationHeader";
 export default function SmallNav() {
   const [openMenu, setOpenMenu] = React.useState(false);
   return (

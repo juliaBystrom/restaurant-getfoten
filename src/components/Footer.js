@@ -1,5 +1,5 @@
 import React from "react";
-import { fetchTimeText } from "../api/api_helpers";
+import { fetchTimeText } from "../utils/api_helpers";
 export function Footer() {
   const [timeText, setTimeText] = React.useState("Laddar...");
 
