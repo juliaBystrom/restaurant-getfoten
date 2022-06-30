@@ -520,7 +520,9 @@ footer {
 
 
 .information-header {
-  background-color: orange;
   width: 100%;
+}
 
+.information-header-text {
+  padding: 10px;
 }

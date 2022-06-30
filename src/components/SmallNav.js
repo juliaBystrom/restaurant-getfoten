@@ -2,13 +2,14 @@ import React from "react";
 
 import { Link } from "react-router-dom";
 import logo2 from "../assets/logoWithTitle.svg";
+import { URL_PATHS } from "../utils/const";
 export default function SmallNav() {
   const [openMenu, setOpenMenu] = React.useState(false);
   return (
     <>
       <div id="mobile-nav-container">
         <div id="small-header-nav">
-          <Link className="nav-link" to="/">
+          <Link className="nav-link" to={URL_PATHS.home}>
             <img src={logo2} id="header-logo" alt="logo" />
           </Link>
           <button
@@ -35,7 +36,7 @@ export default function SmallNav() {
           <li style={{ borderTop: "1px solid #1c1c1c" }}>
             <Link
               className="nav-link"
-              to="/"
+              to={URL_PATHS.home}
               onClick={() => setOpenMenu(false)}
             >
               Hem
@@ -44,7 +45,7 @@ export default function SmallNav() {
           <li>
             <Link
               className="nav-link"
-              to="meny"
+              to={URL_PATHS.meny}
               onClick={() => setOpenMenu(false)}
             >
               Meny
@@ -53,7 +54,7 @@ export default function SmallNav() {
           <li>
             <Link
               className="nav-link"
-              to="hitta-hit"
+              to={URL_PATHS.hittaHit}
               onClick={() => setOpenMenu(false)}
             >
               Hitta hit
@@ -62,7 +63,7 @@ export default function SmallNav() {
           <li>
             <Link
               className="nav-link"
-              to="bastu"
+              to={URL_PATHS.bastu}
               onClick={() => setOpenMenu(false)}
             >
               Bastu
@@ -71,7 +72,7 @@ export default function SmallNav() {
           <li>
             <Link
               className="nav-link"
-              to="gasthamn"
+              to={URL_PATHS.gasthamn}
               onClick={() => setOpenMenu(false)}
             >
               Gästhamnen
