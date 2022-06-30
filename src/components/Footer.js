@@ -1,4 +1,22 @@
-export  function Footer() {
+import React from "react";
+import { fetchTimeText } from "../api/api_helpers";
+export function Footer() {
+  const [timeText, setTimeText] = React.useState("Laddar...");
+
+  React.useEffect(() => {
+    fetchTimeText((attributes) => {
+      const timeTextRes = attributes?.time_text
+        ? attributes?.time_text.replace("\n", "<br />")
+        : "Problem med att hämta aktuella öppetider. <br />Ordinare öppetider Måndag - Söndag: 12 - 22";
+      setTimeText(timeTextRes);
+    });
+  }, []);
+
+  React.useEffect(() => {
+    const timeHTMLtag = document.getElementById("oppetiderText");
+    timeHTMLtag.innerHTML = timeText;
+  }, [timeText]);
+
   return (
     <footer>
       <div className="footer-column">
@@ -13,11 +31,7 @@ export  function Footer() {
       </div>
       <div className="footer-column">
         <h3>Öppetider</h3>
-        <p>Måndag-Söndag: 12-22</p>
-        <p>
-          För avikande tider refererar vi till <br />
-          våra sociala medier.
-        </p>
+        <p id="oppetiderText">{timeText}</p>
       </div>
       <div className="footer-column">
         <h3>Kontakt</h3>
@@ -27,14 +41,22 @@ export  function Footer() {
       <div className="footer-column">
         <h3>Sociala medier</h3>
         <p>
-          Facebook 
-          <a  rel="noreferrer" target="_blank"  href="https://www.facebook.com/getfotensjokrog">
+          Facebook
+          <a
+            rel="noreferrer"
+            target="_blank"
+            href="https://www.facebook.com/getfotensjokrog"
+          >
             @getfotensjokrog
           </a>
         </p>
         <p>
-          Instagram 
-          <a rel="noreferrer" target="_blank" href="https://www.instagram.com/getfotensjokrog/">
+          Instagram
+          <a
+            rel="noreferrer"
+            target="_blank"
+            href="https://www.instagram.com/getfotensjokrog/"
+          >
             @getfotensjokrog
           </a>
         </p>

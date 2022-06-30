@@ -7,3 +7,11 @@ export function getInformation(callback) {
       callback(data.data.attributes);
     });
 }
+
+export function fetchTimeText(callback) {
+  fetch(URLBASE + "oeppetider")
+    .then((response) => response.json())
+    .then((data) => {
+      callback(data?.data?.attributes);
+    });
+}

@@ -2,13 +2,13 @@ import React from "react";
 
 import { Link } from "react-router-dom";
 import logo2 from "../assets/logoWithTitle.svg";
-
+import { InformationHeader } from "./InformationHeader";
 export default function SmallNav() {
   const [openMenu, setOpenMenu] = React.useState(false);
   return (
     <>
       <div id="mobile-nav-container">
-        <div id="small-header-nav" className="small-nav">
+        <div id="small-header-nav">
           <Link className="nav-link" to="/">
             <img src={logo2} id="header-logo" alt="logo" />
           </Link>
@@ -33,7 +33,7 @@ export default function SmallNav() {
 
       {openMenu && (
         <ul className="nav-list-small">
-          <li style={{ "borderTop": "1px solid #1c1c1c" }}>
+          <li style={{ borderTop: "1px solid #1c1c1c" }}>
             <Link
               className="nav-link"
               to="/"
