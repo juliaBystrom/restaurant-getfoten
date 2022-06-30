@@ -33,29 +33,16 @@
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
 
-.App-link {
-  color: #61dafb;
-}
 
 #header {
   width: 100%;
+    /* margin-top: 100px; */
 }
 
 #fixed-background {
   /* Create the parallax scrolling effect */
   width: 100%;
-  /* background-image: url("./assets/green_ocean.jpg"); */
   background-image: url("./assets/denna.jpg");
   background-attachment: fixed;
   background-position: center;
@@ -110,7 +97,7 @@
 .nav-bar {
   width: 100vw;
   box-sizing: border-box;
-  position: fixed;
+  position: relative;
   left: 0px;
   top: 0px;
   z-index: 2;
@@ -139,13 +126,12 @@
   box-sizing: border-box;
   align-items: center;
   justify-content: space-between;
-  padding: 10px;
+  /* padding: 10px; */
   height: 100%;
   list-style: none;
 }
 
 #mobile-nav-container {
-  display: flex;
   flex-direction: column;
   width: 100%;
   display: none;
@@ -154,6 +140,7 @@
   justify-content: center;
   z-index: 40;
 }
+
 
 .nav-list-small {
   display: flex;
@@ -524,4 +511,11 @@ footer {
   padding-right: 10px;
   padding-left: 10px;
   text-align: center;
+}
+
+
+.information-header {
+  background-color: orange;
+  width: 100%;
+
 }
