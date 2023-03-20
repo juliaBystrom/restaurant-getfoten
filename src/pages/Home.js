@@ -11,8 +11,6 @@ export function Home() {
 
   React.useEffect(() => {
     fetchHomePageRichText((data) => {
-      console.log('data:' + data);
-
       if (data?.text) {
         setHomePageText(data?.text)
       }
