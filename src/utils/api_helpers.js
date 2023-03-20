@@ -20,3 +20,12 @@ export function fetchTimeText(callback) {
       callback(data?.data?.attributes);
     });
 }
+
+
+export function fetchContactInfo(callback) {
+  fetch(URLBASE + "contact-information")
+    .then((response) => response.json())
+    .then((data) => {
+      callback(data?.data?.attributes);
+    });
+}

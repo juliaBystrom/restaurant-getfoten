@@ -1,14 +1,27 @@
 import React from "react";
-import { fetchTimeText } from "../utils/api_helpers";
+import { fetchTimeText, fetchContactInfo } from "../utils/api_helpers";
+
+
 export function Footer() {
   const [timeText, setTimeText] = React.useState("Laddar...");
+  const [ email, setEmail] = React.useState("Laddar...");
+  const [ phone, setPhone] = React.useState("Laddar...");
+
+ 
 
   React.useEffect(() => {
     fetchTimeText((attributes) => {
       const timeTextRes = attributes?.time_text
-        ? attributes?.time_text.replace("\n", "<br />")
+        ? attributes?.time_text.replace("\n", "<br/>")
         : "Problem med att hämta aktuella öppetider. <br />Ordinare öppetider Måndag - Söndag: 12 - 22";
       setTimeText(timeTextRes);
+    });
+
+    fetchContactInfo((attributes) => {
+      const email = attributes?.email || "Error";
+      const phone = attributes?.phonenumber || "Error";
+      setEmail(email);
+      setPhone(phone);
     });
   }, []);
 
@@ -16,6 +29,17 @@ export function Footer() {
     const timeHTMLtag = document.getElementById("oppetiderText");
     timeHTMLtag.innerHTML = timeText;
   }, [timeText]);
+
+  React.useEffect(() => {
+    const emailHTMLtag = document.getElementById("email");
+    emailHTMLtag.innerHTML = email;
+  }, [email]);
+
+  React.useEffect(() => {
+    const phoneHTMLtag = document.getElementById("phone");
+    phoneHTMLtag.innerHTML = phone;
+  }, [phone]);
+
 
   return (
     <footer>
@@ -35,8 +59,8 @@ export function Footer() {
       </div>
       <div className="footer-column">
         <h3>Kontakt</h3>
-        <p>08-628 20 00</p>
-        <p>info@getfotensjokrog.se</p>
+        <p id="phone">08-628 20 00</p>
+        <p id="email">info@getfotensjokrog.se</p>
       </div>
       <div className="footer-column">
         <h3>Sociala medier</h3>
