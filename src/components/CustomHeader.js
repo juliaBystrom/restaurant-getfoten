@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import logo2 from "../assets/logoWithTitle.svg";
 import { useLocation } from "react-router-dom";
 import SmallNav from "./SmallNav";
-import {URL_PATHS} from "../utils/const"
+import { URL_PATHS } from "../utils/const"
 export function CustomHeader() {
 
 
@@ -14,15 +14,25 @@ export function CustomHeader() {
     <header id="header">
       <HeaderWrapper>
         <ul id="nav-list-large-screen" className="nav-list">
-          <li className="nav-item">
-            <Link className="nav-link" to={URL_PATHS.meny}>
-              Meny
-            </Link>
+          <li className="nav-item nav-dropdown">
+            <div className="nav-link">
+              Info
+            </div>
+            <div class="dropdown-content">
+              <Link className="nav-link" to={URL_PATHS.hittaHit}>
+                Hitta hit
+              </Link>
+            </div>
           </li>
-          <li className="nav-item">
-            <Link className="nav-link" to={URL_PATHS.hittaHit}>
-              Hitta hit
-            </Link>
+          <li className="nav-item nav-dropdown">
+            <div className="nav-link" id="boka-link">
+              Boka
+            </div>
+            <div class="dropdown-content">
+              <Link className="nav-link" to={URL_PATHS.bastu}>
+                Bastu
+              </Link>
+            </div>
           </li>
           <li id="nav-logo-item">
             <Link className="nav-link" to={URL_PATHS.home}>
@@ -30,13 +40,13 @@ export function CustomHeader() {
             </Link>
           </li>
           <li className="nav-item">
-            <Link className="nav-link" to={URL_PATHS.bastu}>
-              Bastu
+            <Link className="nav-link" to={URL_PATHS.gasthamn}>
+              Gästhamnen
             </Link>
           </li>
           <li className="nav-item">
-            <Link className="nav-link" to={URL_PATHS.gasthamn}>
-              Gästhamnen
+            <Link className="nav-link" to={URL_PATHS.meny}>
+              Meny
             </Link>
           </li>
         </ul>
