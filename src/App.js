@@ -10,6 +10,7 @@ import { Gasthamn } from "./pages/Gasthamn";
 import { InformationHeader } from "./components/InformationHeader";
 import { Oppettider } from "./pages/Oppettider";
 import { FAQ } from "./pages/Faq";
+import {Annexet} from "./pages/Annexet";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
         <Route path="gasthamn" element={<Gasthamn />} />
         <Route path="oppettider" element={<Oppettider />} />
         <Route path="faq" element={<FAQ />} />
+        <Route path="annexet" element={<Annexet />} />
       </Routes>
 
       <Footer />

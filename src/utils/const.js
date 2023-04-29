@@ -19,4 +19,5 @@ export const URL_PATHS = {
   gasthamn: "/gasthamn",
   oppettider: "/oppettider",
   faq: "/faq",
+  annexet: "/annexet",
 };

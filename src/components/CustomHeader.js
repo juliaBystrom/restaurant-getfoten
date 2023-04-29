@@ -40,6 +40,9 @@ export function CustomHeader() {
               <IoIosArrowDown class="dropdown-icon" />
             </div>
             <div class="dropdown-content">
+              <Link className="nav-link" to={URL_PATHS.annexet}>
+                Annexet
+              </Link>
               <Link className="nav-link" to={URL_PATHS.bastu}>
                 Bastu
               </Link>
