@@ -5,6 +5,9 @@ import logo2 from "../assets/logoWithTitle.svg";
 import { useLocation } from "react-router-dom";
 import SmallNav from "./SmallNav";
 import { URL_PATHS } from "../utils/const"
+import { IoIosArrowDown } from "react-icons/io";
+
+
 export function CustomHeader() {
 
 
@@ -17,6 +20,7 @@ export function CustomHeader() {
           <li className="nav-item nav-dropdown">
             <div className="nav-link">
               Info
+              <IoIosArrowDown class="dropdown-icon" />
             </div>
             <div class="dropdown-content">
               <Link className="nav-link" to={URL_PATHS.hittaHit}>
@@ -25,8 +29,9 @@ export function CustomHeader() {
             </div>
           </li>
           <li className="nav-item nav-dropdown">
-            <div className="nav-link" id="boka-link">
+            <div className="nav-link">
               Boka
+              <IoIosArrowDown class="dropdown-icon" />
             </div>
             <div class="dropdown-content">
               <Link className="nav-link" to={URL_PATHS.bastu}>

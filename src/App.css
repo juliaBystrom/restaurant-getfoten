@@ -552,7 +552,21 @@ footer {
   background-color: #ddd;
 }
 
+.nav-dropdown > .nav-link:hover {
+  /* Dropdown nav title should not be underlined on hover */
+  text-decoration: none;
+}
 /* Show the dropdown menu on hover */
 .nav-dropdown:hover .dropdown-content {
   display: block;
+}
+
+.dropdown-icon {
+  color: rgba(253, 187, 45, 1);
+  font-size: 20px;
+  padding-left: 10px;
+}
+.nav-link:hover > .dropdown-icon {
+  /* Flip icon */
+  transform: scaleY(-1);
 }
