@@ -8,6 +8,9 @@ import { HittaHit } from "./pages/HittaHit";
 import { Bastu } from "./pages/Bastu";
 import { Gasthamn } from "./pages/Gasthamn";
 import { InformationHeader } from "./components/InformationHeader";
+import { Oppettider } from "./pages/Oppettider";
+import { FAQ } from "./pages/Faq";
+
 function App() {
   return (
     <div className="App">
@@ -20,6 +23,8 @@ function App() {
         <Route path="hitta-hit" element={<HittaHit />} />
         <Route path="bastu" element={<Bastu />} />
         <Route path="gasthamn" element={<Gasthamn />} />
+        <Route path="oppettider" element={<Oppettider />} />
+        <Route path="faq" element={<FAQ />} />
       </Routes>
 
       <Footer />

@@ -17,4 +17,6 @@ export const URL_PATHS = {
   hittaHit: "/hitta-hit",
   bastu: "/bastu",
   gasthamn: "/gasthamn",
+  oppettider: "/oppettider",
+  faq: "/faq",
 };
