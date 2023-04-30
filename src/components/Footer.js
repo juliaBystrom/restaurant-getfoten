@@ -1,13 +1,13 @@
 import React from "react";
 import { fetchTimeText, fetchContactInfo } from "../utils/api_helpers";
+import { FaFacebookSquare, FaPhoneAlt, FaEnvelope } from "react-icons/fa";
+import { RiInstagramFill } from "react-icons/ri";
 
 
 export function Footer() {
   const [timeText, setTimeText] = React.useState("Laddar...");
-  const [ email, setEmail] = React.useState("Laddar...");
-  const [ phone, setPhone] = React.useState("Laddar...");
-
- 
+  const [email, setEmail] = React.useState("Laddar...");
+  const [phone, setPhone] = React.useState("Laddar...");
 
   React.useEffect(() => {
     fetchTimeText((attributes) => {
@@ -59,31 +59,33 @@ export function Footer() {
       </div>
       <div className="footer-column">
         <h3>Kontakt</h3>
-        <p id="phone">08-628 20 00</p>
-        <p id="email">info@getfotensjokrog.se</p>
+        <div>
+          <div className="social-media-link"><FaPhoneAlt className="social-media-icon" /><p id="phone">08-628 20 00</p></div>
+          <div className="social-media-link"><FaEnvelope className="social-media-icon" /><p id="email">info@getfotensjokrog.se</p></div>
+        </div>
       </div>
       <div className="footer-column">
         <h3>Sociala medier</h3>
-        <p>
-          Facebook
+        <div>
           <a
             rel="noreferrer"
             target="_blank"
             href="https://www.facebook.com/getfotensjokrog"
+            className="social-media-link"
           >
-            @getfotensjokrog
+            <FaFacebookSquare className="social-media-icon" />
+            Facebook
           </a>
-        </p>
-        <p>
-          Instagram
           <a
             rel="noreferrer"
             target="_blank"
             href="https://www.instagram.com/getfotensjokrog/"
+            className="social-media-link"
           >
-            @getfotensjokrog
+            <RiInstagramFill className="social-media-icon" />
+            Instagram
           </a>
-        </p>
+        </div>
       </div>
     </footer>
   );

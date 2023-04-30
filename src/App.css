@@ -16,7 +16,8 @@
 .header-background {
   height: auto;
 }
-.header-background > .text-logo {
+
+.header-background>.text-logo {
   padding-top: 30px;
 }
 
@@ -37,7 +38,7 @@
 
 #header {
   width: 100%;
-    /* margin-top: 100px; */
+  /* margin-top: 100px; */
 }
 
 #fixed-background {
@@ -55,17 +56,16 @@
   padding: 0;
   width: 100%;
   background: rgb(34, 193, 195, 0.5);
-  background: linear-gradient(
-    0deg,
-    rgba(34, 193, 195, 0.5) 50%,
-    rgba(253, 187, 45, 0.5) 100%
-  );
+  background: linear-gradient(0deg,
+      rgba(34, 193, 195, 0.5) 50%,
+      rgba(253, 187, 45, 0.5) 100%);
   /* opacity: 0.5; */
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
+
 .center-item-inside {
   display: flex;
   flex-direction: column;
@@ -78,6 +78,7 @@
   font-family: "Lucida Console";
   padding-top: 20px;
 }
+
 @media screen and (max-width: 650px) {
   .text-logo {
     font-size: 4em;
@@ -155,7 +156,7 @@
   width: 100%;
 }
 
-.nav-list-small > li {
+.nav-list-small>li {
   font-size: 2.3em;
   padding: 20px 0px;
   list-style: none;
@@ -163,11 +164,11 @@
   border-bottom: 1px solid #1c1c1c;
 }
 
-.nav-list-small > li > .nav-link {
+.nav-list-small>li>.nav-link {
   color: #1c1c1c;
 }
 
-.nav-list > li {
+.nav-list>li {
   list-style: none;
   align-self: flex-end;
 }
@@ -314,7 +315,7 @@
 }
 
 .card:hover {
-  box-shadow: 5px 5px  #daddd8;
+  box-shadow: 5px 5px #daddd8;
   background-color: #fcfcff;
 }
 
@@ -324,6 +325,7 @@
   object-fit: cover;
   width: 250px;
 }
+
 .page-img {
   width: 100%;
   height: 400px;
@@ -335,6 +337,7 @@
   padding: 20px;
   color: #1c1c1c;
 }
+
 .card-title {
   grid-area: card-title;
   padding: 10px;
@@ -365,8 +368,31 @@ footer {
 }
 
 
-.footer-column > p {
+.footer-column>p {
   max-width: 40ch;
+}
+
+.footer-column>div {
+  max-width: 40ch;
+  display: flex;
+  flex-direction: column;
+}
+
+.social-media-link {
+  color: #1c1c1c;
+  display:flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 5px 0px;
+}
+
+.social-media-link > p {
+  margin: 0;
+  padding: 0;
+}
+
+.social-media-icon {
+  margin-right: 5px;
 }
 
 .text-section {
@@ -374,6 +400,7 @@ footer {
   padding-right: 50px;
   padding-left: 50px;
 }
+
 .text-section > p {
   font-size: 1.2em;
   line-height: 1.7;
@@ -382,12 +409,14 @@ footer {
   padding-left: 10px;
   padding-right: 10px;
 }
+
 .text-box-container {
   display: flex;
   flex-direction: row;
   justify-content: center;
   height: 100%;
 }
+
 .text-box-container-column {
   display: flex;
   flex-direction: column;
@@ -404,6 +433,7 @@ footer {
 .text-box-third {
   width: 33.33%;
 }
+
 .third-height {
   height: 33.33%;
 }
@@ -411,18 +441,19 @@ footer {
 .text-box-half {
   width: 50%;
 }
+
 .half-height {
   height: 50%;
 }
 
-.text-box > p {
+.text-box>p {
   font-size: 16px;
   line-height: 1.7;
   font-weight: 400;
   text-align: left;
 }
 
-.text-box > h4 {
+.text-box>h4 {
   text-align: left;
 }
 
@@ -436,6 +467,7 @@ footer {
   .text-box-container {
     flex-direction: column;
   }
+
   .text-box-third {
     width: 90%;
   }
@@ -445,7 +477,7 @@ footer {
   }
 }
 
-.text-section > h2 {
+.text-section>h2 {
   line-height: 1.7;
 }
 
@@ -481,13 +513,16 @@ footer {
   0% {
     opacity: 0;
   }
+
   30% {
     opacity: 1;
   }
+
   60% {
     box-shadow: 0 0 0 60px rgba(255, 255, 255, 0.1);
     opacity: 0;
   }
+
   100% {
     opacity: 0;
   }
@@ -533,7 +568,7 @@ footer {
   position: absolute;
   background-color: #f9f9f9;
   min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
 }
 
@@ -552,10 +587,11 @@ footer {
   background-color: #ddd;
 }
 
-.nav-dropdown > .nav-link:hover {
+.nav-dropdown>.nav-link:hover {
   /* Dropdown nav title should not be underlined on hover */
   text-decoration: none;
 }
+
 /* Show the dropdown menu on hover */
 .nav-dropdown:hover .dropdown-content {
   display: block;
@@ -566,7 +602,8 @@ footer {
   font-size: 20px;
   padding-left: 10px;
 }
-.nav-link:hover > .dropdown-icon {
+
+.nav-link:hover>.dropdown-icon {
   /* Flip icon */
   transform: scaleY(-1);
 }
