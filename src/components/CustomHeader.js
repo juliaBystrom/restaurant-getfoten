@@ -20,9 +20,9 @@ export function CustomHeader() {
           <li className="nav-item nav-dropdown">
             <div className="nav-link">
               Info
-              <IoIosArrowDown class="dropdown-icon" />
+              <IoIosArrowDown className="dropdown-icon" />
             </div>
-            <div class="dropdown-content">
+            <div className="dropdown-content">
               <Link className="nav-link" to={URL_PATHS.oppettider}>
                 Öppettider
               </Link>
@@ -37,9 +37,9 @@ export function CustomHeader() {
           <li className="nav-item nav-dropdown">
             <div className="nav-link">
               Boka
-              <IoIosArrowDown class="dropdown-icon" />
+              <IoIosArrowDown className="dropdown-icon" />
             </div>
-            <div class="dropdown-content">
+            <div className="dropdown-content">
               <Link className="nav-link" to={URL_PATHS.annexet}>
                 Annexet
               </Link>
