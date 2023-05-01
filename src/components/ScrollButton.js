@@ -28,7 +28,7 @@ const ScrollButton = () => {
 
 
   return (
-    <button id="scroll-button" style={{ display: visible ? "inline" : "none" }}
+    <button className="hide-on-none-mobile" id="scroll-button" style={{ display: visible ? "inline" : "none" }}
     >
       <AiFillDownCircle
         onClick={scrollToBottom}

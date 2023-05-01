@@ -14,7 +14,7 @@ export function CustomHeader() {
 
   return (
     <header id="header">
-      <HeaderWrapper>
+      <nav className="nav-bar">
         <ul id="nav-list-large-screen" className="nav-list">
           <li className="nav-item nav-dropdown">
             <div className="nav-link">
@@ -63,8 +63,8 @@ export function CustomHeader() {
             </Link>
           </li>
         </ul>
-        <SmallNav />
-      </HeaderWrapper>
+        <SmallNav className="hide-on-none-mobile"/>
+      </nav>
       {location?.pathname === URL_PATHS.home ? (
         <div id="fixed-background" className="header-background-home">
           <div className="header-background-home overlay center-item-inside">
@@ -81,45 +81,3 @@ export function CustomHeader() {
     </header>
   );
 }
-
-export const HeaderWrapper = ({ children }) => {
-  const [transparent, setTransparent] = React.useState(true);
-  window.addEventListener(
-    "scroll",
-    () => {
-      scrolling = true;
-    },
-    { passive: true }
-  );
-
-  let scrolling = false;
-  /*
-    If the user scrolled past the header, make the header non trasparant.
-  */
-  const toggleTransparent = () => {
-    const scrolledToY = window.scrollY;
-    var headerHeight = document.getElementById("header").offsetHeight;
-
-    if (headerHeight < scrolledToY + 90) {
-      if (transparent) {
-        setTransparent(false);
-      }
-    } else if (!transparent) {
-      setTransparent(true);
-    }
-  };
-
-  // Minimizes the amount of calls to toggleTransparent()
-  setInterval(() => {
-    if (scrolling) {
-      scrolling = false;
-      toggleTransparent();
-    }
-  }, 400);
-
-  return (
-    <nav className={!transparent ? "nav-bar nav-bar-solid" : "nav-bar"}>
-      {children}
-    </nav>
-  );
-};

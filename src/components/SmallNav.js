@@ -4,7 +4,7 @@ import logo2 from "../assets/logoWithTitle.svg";
 import { URL_PATHS } from "../utils/const";
 import ScrollButton from "./ScrollButton";
 import { useLocation } from "react-router-dom";
-
+import { disableScroll, enableScroll } from "../utils/schroll";
 
 export default function SmallNav() {
   const [openMenu, setOpenMenu] = React.useState(false);
@@ -14,11 +14,24 @@ export default function SmallNav() {
   React.useEffect(() => {
     setOpenMenu(false);
   }, [location]);
-  
+
+
+  React.useEffect(() => {
+    if (openMenu) {
+      const infoHeader = window.document.getElementById("info-header")
+      if(infoHeader) infoHeader.style.display = "none";
+      disableScroll();
+    } else {
+      const infoHeader = window.document.getElementById("info-header")
+      if(infoHeader) infoHeader.style.display = "block";
+      enableScroll();
+    }
+  }, [openMenu]);
+
 
   return (
     <>
-      <div id="mobile-nav-container">
+      <div id="mobile-nav-container" scroll="no">
         <div id="small-header-nav">
           <Link className="nav-link" to={URL_PATHS.home}>
             <img src={logo2} id="header-logo" alt="logo" />

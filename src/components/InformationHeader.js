@@ -26,6 +26,7 @@ export function InformationHeader() {
     
   return information.showInfo ? (
     <div
+      id="info-header"
       className="information-header"
       style={{ "backgroundColor":  COLOURS[information.colour] }}
     >
