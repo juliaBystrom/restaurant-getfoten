@@ -3,7 +3,7 @@
 Fetch information from Strapi about information banner.
 */
 export function getInformation(callback) {
-  fetch( process.env.REACT_APP_URLBASE + "/api/informations-ruta")
+  fetch(process.env.REACT_APP_URLBASE + "/api/informations-ruta")
     .then((response) => response.json())
     .then((data) => {
       callback(data.data.attributes);
@@ -13,7 +13,7 @@ export function getInformation(callback) {
 Fetch information from Strapi about open hours.
 */
 export function fetchTimeText(callback) {
-  fetch( process.env.REACT_APP_URLBASE + "/api/oeppetider")
+  fetch(process.env.REACT_APP_URLBASE + "/api/oeppetider")
     .then((response) => response.json())
     .then((data) => {
       callback(data?.data?.attributes);
@@ -22,7 +22,7 @@ export function fetchTimeText(callback) {
 
 
 export function fetchContactInfo(callback) {
-  fetch( process.env.REACT_APP_URLBASE + "/api/contact-information")
+  fetch(process.env.REACT_APP_URLBASE + "/api/contact-information")
     .then((response) => response.json())
     .then((data) => {
       callback(data?.data?.attributes);
@@ -39,11 +39,11 @@ export function fetchMenues(callback) {
       const menuUrl = data?.data?.attributes?.menu?.data?.attributes?.url
       const drinkMenuUrl = data?.data?.attributes?.drink_menu?.data?.attributes?.url
       callback(menuUrl, drinkMenuUrl);
-    }); 
+    });
 }
 
 export function fetchRichText(callback, endpoint) {
-  fetch( process.env.REACT_APP_URLBASE + endpoint)
+  fetch(process.env.REACT_APP_URLBASE + endpoint)
     .then((response) => response.json())
     .then((data) => {
       callback(data?.data?.attributes);
@@ -51,3 +51,11 @@ export function fetchRichText(callback, endpoint) {
 }
 
 
+
+export function fetchFAQ(callback) {
+  fetch(process.env.REACT_APP_URLBASE + "/api/question-answers")
+    .then((response) => response.json())
+    .then((data) => {
+      callback(data?.data);
+    });
+}

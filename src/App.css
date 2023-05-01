@@ -639,3 +639,40 @@ footer {
   padding-left: 10px;
   padding-right: 10px;
 }
+
+/* Accordions for FAQ */
+
+.faq {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.faq-details {
+  font-size: 1.25rem;
+  margin-bottom: 10px;
+
+}
+.faq-details > summary {
+  border: 2px solid #000;
+	padding: .75em 1em;
+	cursor: pointer;
+	position: relative;
+  padding-left: 15px;
+}
+
+.faq-details[open] summary {
+	background-color: #eee;
+
+}
+.faq-details > summary:hover {
+	background-color: #eee;
+}
+
+.faq-details > div {
+  border-left: 2px solid #000;
+	border-right: 2px solid #000;
+	border-bottom: 2px solid #000;
+	padding: 1.5em;
+
+}
