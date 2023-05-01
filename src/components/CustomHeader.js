@@ -23,7 +23,7 @@ export function CustomHeader() {
               <IoIosArrowDown className="dropdown-icon" />
             </div>
             <div className="dropdown-content">
-              <Link className="nav-link" to={URL_PATHS.oppettider}>
+              <Link className="nav-link" to={URL_PATHS.calendar}>
                 Öppettider
               </Link>
               <Link className="nav-link" to={URL_PATHS.hittaHit}>

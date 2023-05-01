@@ -49,3 +49,15 @@ export function fetchHomePageRichText(callback) {
       callback(data?.data?.attributes);
     });
 }
+
+export function fetchCalendarRichText(callback) {
+  fetch( process.env.REACT_APP_URLBASE + "/api/calender")
+    .then((response) => response.json())
+    .then((data) => {
+      callback(data?.data?.attributes);
+    });
+}
+
+
+
+
