@@ -1,7 +1,7 @@
-import brygga_sun from "../assets/brygga_sun.jpg";
-import boats_darker from "../assets/boats_darker.jpg";
-import boats from "../assets/boats.jpg";
-import { Link } from "react-router-dom";
+import bastu_edited from "../assets/bastu_edited.png";
+import food from "../assets/food.jpg";
+import house from "../assets/house.jpg";
+import inside from "../assets/inside.jpg";
 import ReactMarkdown from 'react-markdown';
 import { fetchHomePageRichText } from "../utils/api_helpers";
 import React, { useState } from "react";
@@ -17,8 +17,6 @@ export function Home() {
     });
   }, []);
 
-
-
   return (
     <main className="container">
       <section className="section text-section">
@@ -26,19 +24,19 @@ export function Home() {
         <ReactMarkdown>{homePageText}</ReactMarkdown>
       </section>
       <section className="section">
-        <div className="card-container">
-          <Link className="card" to="bastu">
-            <img src={brygga_sun} className="card-img" alt="background" />
-            <h2 className="card-title">Bastu</h2>
-          </Link>
-          <Link className="card" to="gasthamn">
-            <img src={boats_darker} className="card-img" alt="background" />
-            <h2 className="card-title">Gästhamn</h2>
-          </Link>
-          <Link className="card" to="meny">
-            <img src={boats} className="card-img" alt="background" />
-            <h2 className="card-title">Restaurang</h2>
-          </Link>
+        <div className="photo-grid">
+          <div className="photo-container">
+            <img src={bastu_edited} className="photo" alt="bastu" />
+          </div>
+          <div className="photo-container">
+            <img src={food} className="photo" alt="food" />
+          </div>
+          <div className="photo-container">
+            <img src={house} className="photo" alt="house" />
+          </div>
+          <div className="photo-container">
+            <img src={inside} className="photo" alt="inside of resturant" />
+          </div>
         </div>
       </section>
     </main>
