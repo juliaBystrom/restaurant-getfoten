@@ -139,7 +139,12 @@
   align-content: center;
   align-items: center;
   justify-content: center;
+  /*   
+  This add the header with the open/close 
+  hamburger menu button and logo on top of navigation
+  */
   z-index: 40;
+
 }
 
 
@@ -482,7 +487,7 @@ footer {
 }
 
 #scroll-button {
-  position: absolute;
+  position: fixed;
   bottom: 20vh;
   left: 0;
   width: 100%;
@@ -631,7 +636,7 @@ footer {
 }
 
 .cordinates-link {
-  color: inherit; 
+  color: inherit;
 }
 
 .fetch-text {
@@ -653,26 +658,28 @@ footer {
   margin-bottom: 10px;
 
 }
-.faq-details > summary {
+
+.faq-details>summary {
   border: 2px solid #000;
-	padding: .75em 1em;
-	cursor: pointer;
-	position: relative;
+  padding: .75em 1em;
+  cursor: pointer;
+  position: relative;
   padding-left: 15px;
 }
 
 .faq-details[open] summary {
-	background-color: #eee;
+  background-color: #eee;
 
 }
-.faq-details > summary:hover {
-	background-color: #eee;
+
+.faq-details>summary:hover {
+  background-color: #eee;
 }
 
-.faq-details > div {
+.faq-details>div {
   border-left: 2px solid #000;
-	border-right: 2px solid #000;
-	border-bottom: 2px solid #000;
-	padding: 1.5em;
+  border-right: 2px solid #000;
+  border-bottom: 2px solid #000;
+  padding: 1.5em;
 
 }

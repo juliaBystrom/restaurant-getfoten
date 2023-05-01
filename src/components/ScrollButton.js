@@ -9,9 +9,9 @@ const ScrollButton = () => {
     const scrolled = document.documentElement.scrollTop;
     if (scrolled > 0) {
       setVisible(false);
-    } else if (scrolled <= 0) {
+    }/*  else if (scrolled <= 0) {
       setVisible(true);
-    }
+    } */
   };
 
   const scrollToBottom = () => {
@@ -22,14 +22,18 @@ const ScrollButton = () => {
     });
   };
 
-  window.addEventListener("scroll", toggleVisible);
+  React.useEffect(() => {
+    window.addEventListener("scroll", toggleVisible);
+  }, []);
+
 
   return (
-	  <button id="scroll-button" >
+    <button id="scroll-button" style={{ display: visible ? "inline" : "none" }}
+    >
       <AiFillDownCircle
         onClick={scrollToBottom}
-			  style={{ display: visible ? "inline" : "none" }}
-			  
+        style={{ display: visible ? "inline" : "none" }}
+
       />
     </button>
   );

@@ -1,5 +1,4 @@
 import React from "react";
-import ScrollButton from "./ScrollButton";
 import { Link } from "react-router-dom";
 import logo2 from "../assets/logoWithTitle.svg";
 import { useLocation } from "react-router-dom";
@@ -71,7 +70,6 @@ export function CustomHeader() {
           <div className="header-background-home overlay center-item-inside">
             <h1 className="text-logo">Getfoten Sjökrog</h1>
           </div>
-          <ScrollButton />
         </div>
       ) : (
         <div id="fixed-background" className="header-background">

@@ -1,10 +1,21 @@
 import React from "react";
-
 import { Link } from "react-router-dom";
 import logo2 from "../assets/logoWithTitle.svg";
 import { URL_PATHS } from "../utils/const";
+import ScrollButton from "./ScrollButton";
+import { useLocation } from "react-router-dom";
+
+
 export default function SmallNav() {
   const [openMenu, setOpenMenu] = React.useState(false);
+  const location = useLocation();
+
+  // When user preses logo and navigates to home this will cose the menu on mobile (if user is not already on home)
+  React.useEffect(() => {
+    setOpenMenu(false);
+  }, [location]);
+  
+
   return (
     <>
       <div id="mobile-nav-container">
@@ -34,21 +45,31 @@ export default function SmallNav() {
       {openMenu && (
         <ul className="nav-list-small">
           <li style={{ borderTop: "1px solid #1c1c1c" }}>
-            <Link
-              className="nav-link"
-              to={URL_PATHS.home}
-              onClick={() => setOpenMenu(false)}
-            >
-              Hem
-            </Link>
-          </li>
-          <li>
+
             <Link
               className="nav-link"
               to={URL_PATHS.meny}
               onClick={() => setOpenMenu(false)}
             >
               Meny
+            </Link>
+          </li>
+          <li>
+            <Link
+              className="nav-link"
+              to={URL_PATHS.gasthamn}
+              onClick={() => setOpenMenu(false)}
+            >
+              Gästhamnen
+            </Link>
+          </li>
+          <li>
+            <Link
+              className="nav-link"
+              to={URL_PATHS.calendar}
+              onClick={() => setOpenMenu(false)}
+            >
+              Kalender
             </Link>
           </li>
           <li>
@@ -63,23 +84,33 @@ export default function SmallNav() {
           <li>
             <Link
               className="nav-link"
-              to={URL_PATHS.bastu}
+              to={URL_PATHS.faq}
               onClick={() => setOpenMenu(false)}
             >
-              Bastu
+              Vanliga frågor
             </Link>
           </li>
           <li>
             <Link
               className="nav-link"
-              to={URL_PATHS.gasthamn}
+              to={URL_PATHS.annexet}
               onClick={() => setOpenMenu(false)}
             >
-              Gästhamnen
+              Boka Annexet
+            </Link>
+          </li>
+          <li>
+            <Link
+              className="nav-link"
+              to={URL_PATHS.bastu}
+              onClick={() => setOpenMenu(false)}
+            >
+              Boka bastu
             </Link>
           </li>
         </ul>
       )}
+      {!openMenu && location?.pathname === URL_PATHS.home && <ScrollButton />}
     </>
   );
 }
