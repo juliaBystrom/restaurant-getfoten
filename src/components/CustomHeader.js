@@ -1,58 +1,75 @@
 import React from "react";
-import ScrollButton from "./ScrollButton";
 import { Link } from "react-router-dom";
 import logo2 from "../assets/logoWithTitle.svg";
 import { useLocation } from "react-router-dom";
 import SmallNav from "./SmallNav";
+import { URL_PATHS } from "../utils/const"
+import { IoIosArrowDown } from "react-icons/io";
+
+
 export function CustomHeader() {
-  const URL_PATHS = {
-    home: "/",
-    meny: "/meny",
-    hittaHit: "/hitta-hit",
-    bastu: "/bastu",
-    gasthamn: "/gasthamn",
-  };
+
 
   const location = useLocation();
 
   return (
     <header id="header">
-      <HeaderWrapper>
+      <nav className="nav-bar">
         <ul id="nav-list-large-screen" className="nav-list">
-          <li className="nav-item">
-            <Link className="nav-link" to="meny">
-              Meny
-            </Link>
+          <li className="nav-item nav-dropdown">
+            <div className="nav-link">
+              Info
+              <IoIosArrowDown className="dropdown-icon" />
+            </div>
+            <div className="dropdown-content">
+              <Link className="nav-link" to={URL_PATHS.calendar}>
+                Kalender
+              </Link>
+              <Link className="nav-link" to={URL_PATHS.hittaHit}>
+                Hitta hit
+              </Link>
+              <Link className="nav-link" to={URL_PATHS.faq}>
+                Vanliga frågor
+              </Link>
+            </div>
           </li>
-          <li className="nav-item">
-            <Link className="nav-link" to="hitta-hit">
-              Hitta hit
-            </Link>
+          <li className="nav-item nav-dropdown">
+            <div className="nav-link">
+              Boka
+              <IoIosArrowDown className="dropdown-icon" />
+            </div>
+            <div className="dropdown-content">
+              <Link className="nav-link" to={URL_PATHS.annexet}>
+                Annexet
+              </Link>
+              <Link className="nav-link" to={URL_PATHS.bastu}>
+                Bastu
+              </Link>
+            </div>
           </li>
           <li id="nav-logo-item">
-            <Link className="nav-link" to="/">
+            <Link className="nav-link" to={URL_PATHS.home}>
               <img src={logo2} id="header-logo" alt="logo" />
             </Link>
           </li>
           <li className="nav-item">
-            <Link className="nav-link" to="bastu">
-              Bastu
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link className="nav-link" to="gasthamn">
+            <Link className="nav-link" to={URL_PATHS.gasthamn}>
               Gästhamnen
             </Link>
           </li>
+          <li className="nav-item">
+            <Link className="nav-link" to={URL_PATHS.meny}>
+              Meny
+            </Link>
+          </li>
         </ul>
-        <SmallNav />
-      </HeaderWrapper>
+        <SmallNav className="hide-on-none-mobile"/>
+      </nav>
       {location?.pathname === URL_PATHS.home ? (
         <div id="fixed-background" className="header-background-home">
           <div className="header-background-home overlay center-item-inside">
             <h1 className="text-logo">Getfoten Sjökrog</h1>
           </div>
-          <ScrollButton />
         </div>
       ) : (
         <div id="fixed-background" className="header-background">
@@ -64,45 +81,3 @@ export function CustomHeader() {
     </header>
   );
 }
-
-export const HeaderWrapper = ({ children }) => {
-  const [transparent, setTransparent] = React.useState(true);
-  window.addEventListener(
-    "scroll",
-    () => {
-      scrolling = true;
-    },
-    { passive: true }
-  );
-
-  let scrolling = false;
-  /*
-    If the user scrolled past the header, make the header non trasparant.
-  */
-  const toggleTransparent = () => {
-    const scrolledToY = window.scrollY;
-    var headerHeight = document.getElementById("header").offsetHeight;
-
-    if (headerHeight < scrolledToY + 90) {
-      if (transparent) {
-        setTransparent(false);
-      }
-    } else if (!transparent) {
-      setTransparent(true);
-    }
-  };
-
-  // Minimizes the amount of calls to toggleTransparent()
-  setInterval(() => {
-    if (scrolling) {
-      scrolling = false;
-      toggleTransparent();
-    }
-  }, 400);
-
-  return (
-    <nav className={!transparent ? "nav-bar nav-bar-solid" : "nav-bar"}>
-      {children}
-    </nav>
-  );
-};
