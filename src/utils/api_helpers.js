@@ -29,13 +29,16 @@ export function fetchContactInfo(callback) {
     });
 }
 
-export function fetchMenu(callback) {
-  const url = process.env.REACT_APP_URLBASE + "/api/menu?populate=meny";
+export function fetchMenues(callback) {
+  // Using populate because of Strapi not returning media files otherwise.
+  // Populates media fiels one level deep.
+  const url = process.env.REACT_APP_URLBASE + "/api/menu?populate=*";
   fetch(url)
     .then((response) => response.json())
     .then(data => {
-      const menuData = data?.data?.attributes?.meny?.data?.attributes
-      callback(menuData);
+      const menuUrl = data?.data?.attributes?.menu?.data?.attributes?.url
+      const drinkMenuUrl = data?.data?.attributes?.drink_menu?.data?.attributes?.url
+      callback(menuUrl, drinkMenuUrl);
     }); 
 }
 
