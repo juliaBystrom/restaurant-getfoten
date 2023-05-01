@@ -55,7 +55,7 @@ export function Footer() {
         </a>
       </div>
       <div className="footer-column">
-        <h3>Öppetider</h3>
+        <h3>Öppettider</h3>
         <p id="oppetiderText">{timeText}</p>
       </div>
       <div className="footer-column">
