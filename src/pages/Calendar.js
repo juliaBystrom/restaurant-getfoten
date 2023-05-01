@@ -1,13 +1,13 @@
 import ReactMarkdown from 'react-markdown';
 import React from "react";
-import { fetchCalendarRichText } from "../utils/api_helpers";
+import { fetchRichText } from "../utils/api_helpers";
 
 export function Calendar() {
     const [pageTitle, setPageTitle] = React.useState(null);
     const [calendarText, setCalendarText] = React.useState(null);
 
     React.useEffect(() => {
-        fetchCalendarRichText((data) => {
+        fetchRichText((data) => {
             if (data?.text) {
                 setCalendarText(data?.text)
             }
@@ -15,7 +15,7 @@ export function Calendar() {
             if (data?.title) {
                 setPageTitle(data?.title)
             }
-        });
+        }, "/api/calender");
     }, []);
 
     return (

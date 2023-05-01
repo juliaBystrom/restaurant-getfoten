@@ -42,22 +42,12 @@ export function fetchMenues(callback) {
     }); 
 }
 
-export function fetchHomePageRichText(callback) {
-  fetch( process.env.REACT_APP_URLBASE + "/api/homepage")
+export function fetchRichText(callback, endpoint) {
+  fetch( process.env.REACT_APP_URLBASE + endpoint)
     .then((response) => response.json())
     .then((data) => {
       callback(data?.data?.attributes);
     });
 }
-
-export function fetchCalendarRichText(callback) {
-  fetch( process.env.REACT_APP_URLBASE + "/api/calender")
-    .then((response) => response.json())
-    .then((data) => {
-      callback(data?.data?.attributes);
-    });
-}
-
-
 
 

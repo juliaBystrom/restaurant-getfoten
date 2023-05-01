@@ -3,18 +3,18 @@ import food from "../assets/food.jpg";
 import house from "../assets/house.jpg";
 import inside from "../assets/inside.jpg";
 import ReactMarkdown from 'react-markdown';
-import { fetchHomePageRichText } from "../utils/api_helpers";
+import { fetchRichText } from "../utils/api_helpers";
 import React, { useState } from "react";
 
 export function Home() {
   const [homePageText, setHomePageText] = useState(null);
 
   React.useEffect(() => {
-    fetchHomePageRichText((data) => {
+    fetchRichText((data) => {
       if (data?.text) {
         setHomePageText(data?.text)
       }
-    });
+    }, "/api/homepage");
   }, []);
 
   return (
