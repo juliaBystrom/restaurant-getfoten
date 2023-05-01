@@ -24,7 +24,7 @@ export function CustomHeader() {
             </div>
             <div className="dropdown-content">
               <Link className="nav-link" to={URL_PATHS.calendar}>
-                Öppettider
+                Kalender
               </Link>
               <Link className="nav-link" to={URL_PATHS.hittaHit}>
                 Hitta hit
