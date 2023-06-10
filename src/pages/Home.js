@@ -1,10 +1,11 @@
-import bastu_edited from "../assets/bastu_edited.png";
-import food from "../assets/food.jpg";
 import house from "../assets/house.jpg";
-import inside from "../assets/inside.jpg";
 import ReactMarkdown from 'react-markdown';
 import { fetchRichText } from "../utils/api_helpers";
 import React, { useState } from "react";
+import ute from "../assets/v2/ute.jpg";
+import bastu from "../assets/v2/bastu.jpg";
+import mork_brygga from "../assets/v2/mork_brygga.jpg";
+
 
 export function Home() {
   const [homePageText, setHomePageText] = useState(null);
@@ -26,16 +27,16 @@ export function Home() {
       <section className="section">
         <div className="photo-grid">
           <div className="photo-container">
-            <img src={bastu_edited} className="photo" alt="bastu" />
+            <img src={bastu} className="photo" alt="bastu" />
           </div>
           <div className="photo-container">
-            <img src={food} className="photo" alt="food" />
+            <img src={ute} className="photo" alt="food" />
           </div>
           <div className="photo-container">
             <img src={house} className="photo" alt="house" />
           </div>
           <div className="photo-container">
-            <img src={inside} className="photo" alt="inside of resturant" />
+            <img src={mork_brygga} className="photo" alt="inside of resturant" />
           </div>
         </div>
       </section>
