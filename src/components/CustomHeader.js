@@ -65,6 +65,10 @@ export function CustomHeader() {
         </ul>
         <SmallNav className="hide-on-none-mobile"/>
       </nav>
+      {/*       
+      This is the header background.
+      Uncomment if they want to use it again.
+      
       {location?.pathname === URL_PATHS.home ? (
         <div id="fixed-background" className="header-background-home">
           <div className="header-background-home overlay center-item-inside">
@@ -77,7 +81,7 @@ export function CustomHeader() {
             <h1 className="text-logo">Getfoten Sjökrog</h1>
           </div>
         </div>
-      )}
+      )} */}
     </header>
   );
 }
