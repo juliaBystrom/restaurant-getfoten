@@ -38,6 +38,7 @@
 
 #header {
   width: 100%;
+  color: #fafaff;
   /* margin-top: 100px; */
 }
 
@@ -353,7 +354,9 @@
 
 footer {
   width: 100%;
-  background-color: #daddd8;
+  /* background-color: #daddd8; */
+  background-color: #023047;
+  color: #fafaff;
   height: 200px;
   height: auto;
   display: flex;
@@ -386,7 +389,8 @@ footer {
 }
 
 .social-media-link {
-  color: #1c1c1c;
+  /* color: #1c1c1c; */
+  color: #fafaff;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -497,7 +501,8 @@ footer {
   font-size: 3rem;
   z-index: 20;
   cursor: pointer;
-  color: #1c1c1c;
+  /* color: #1c1c1c; */
+  color: #fafaff;
   background-color: transparent;
   border: 0;
 }
@@ -542,7 +547,8 @@ footer {
 }
 
 .nav-bar-solid {
-  background-color: #daddd8;
+  /* background-color: #daddd8; */
+  background-color: #023047;
 }
 
 .nav-bar-solid .nav-link {
